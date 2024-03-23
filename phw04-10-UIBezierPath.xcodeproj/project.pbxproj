@@ -13,6 +13,8 @@
 		F3114A252BAB813400FA0FEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3114A232BAB813400FA0FEC /* Main.storyboard */; };
 		F3114A272BAB813500FA0FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3114A262BAB813500FA0FEC /* Assets.xcassets */; };
 		F3114A2A2BAB813500FA0FEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3114A282BAB813500FA0FEC /* LaunchScreen.storyboard */; };
+		F3114A322BAB855E00FA0FEC /* GoBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3114A312BAB855E00FA0FEC /* GoBoardView.swift */; };
+		F3B09FFE2BAF6A2000D8E34A /* MagicCirclePart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B09FFD2BAF6A2000D8E34A /* MagicCirclePart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		F3114A262BAB813500FA0FEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3114A292BAB813500FA0FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3114A2B2BAB813500FA0FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3114A312BAB855E00FA0FEC /* GoBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoBoardView.swift; sourceTree = "<group>"; };
+		F3B09FFD2BAF6A2000D8E34A /* MagicCirclePart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCirclePart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				F3114A262BAB813500FA0FEC /* Assets.xcassets */,
 				F3114A282BAB813500FA0FEC /* LaunchScreen.storyboard */,
 				F3114A2B2BAB813500FA0FEC /* Info.plist */,
+				F3114A312BAB855E00FA0FEC /* GoBoardView.swift */,
+				F3B09FFD2BAF6A2000D8E34A /* MagicCirclePart.swift */,
 			);
 			path = "phw04-10-UIBezierPath";
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3114A222BAB813400FA0FEC /* ViewController.swift in Sources */,
+				F3114A322BAB855E00FA0FEC /* GoBoardView.swift in Sources */,
+				F3B09FFE2BAF6A2000D8E34A /* MagicCirclePart.swift in Sources */,
 				F3114A1E2BAB813400FA0FEC /* AppDelegate.swift in Sources */,
 				F3114A202BAB813400FA0FEC /* SceneDelegate.swift in Sources */,
 			);
