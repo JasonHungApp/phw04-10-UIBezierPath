@@ -195,7 +195,7 @@ class GoBoardView: UIView {
         layer.addSublayer(stoneLayer) // 將棋子添加到視圖的 layer 上
         
         // 繪製魔法陣
-        let magicCircleLayers = MagicCirclePart.drawMagicCircle(color: .red, shadowColor: .gray)
+        let magicCircleLayers = MagicCirclePart.drawMagicCircle(color: .red, shadowColor: .gray, centerCircleRadius: radius+5)
         
         // 調整魔法陣的中心點與棋子的中心點一致
         let magicCircleCenter = center

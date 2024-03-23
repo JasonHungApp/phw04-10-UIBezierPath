@@ -32,7 +32,7 @@ enum MagicCirclePart {
     
     
     
-    static func drawMagicCircle(color: UIColor, shadowColor: UIColor) -> [MagicCirclePart : CALayer] {
+    static func drawMagicCircle(color: UIColor, shadowColor: UIColor, centerCircleRadius: CGFloat) -> [MagicCirclePart : CALayer] {
         var magicCircleLayers: [MagicCirclePart : CALayer] = [:]
         
         // 繪製最後一個棋子的外框 //jason
@@ -41,23 +41,24 @@ enum MagicCirclePart {
                          radius: 24, // 外圈的半徑
                          distance: 0, // 內圈和外圈的距離
                          lineWidth: 1, // 線條寬度
-                         color: .orange,
+                         color: .clear,
                          shadowColor: shadowColor)
         
         magicCircleLayers[.centerCircle] =
             doubleCircle(center: CGPoint(x: 200, y: 200),
-                         radius: 14,  //96
-                         distance: 3, //30
-                         lineWidth: 1,  //2
-                         color: .red,
+                         radius: centerCircleRadius,  //96
+                         distance: 1, //30
+                         lineWidth: 0.5,  //2
+                         color: .red.withAlphaComponent(0.8),
                          shadowColor: shadowColor)
+        
 
         magicCircleLayers[.centerSquqreA] =
             singleSquare(location: CGPoint(x: 65, y: 65),
                          angle: 45,
                          width: 30,  //190
                          lineWidth: 1, //2
-                         color: .blue,
+                         color: .clear,
                          shadowColor: shadowColor)
 
         magicCircleLayers[.centerSquqreB] =
@@ -65,7 +66,7 @@ enum MagicCirclePart {
                          angle: 90,
                          width: 30,  //190
                          lineWidth: 1,  //2
-                         color: .black,
+                         color: .clear,
                          shadowColor: shadowColor)
 
         return magicCircleLayers
