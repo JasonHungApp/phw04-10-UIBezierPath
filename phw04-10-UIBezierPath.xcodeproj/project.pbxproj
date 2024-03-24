@@ -15,6 +15,15 @@
 		F3114A2A2BAB813500FA0FEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3114A282BAB813500FA0FEC /* LaunchScreen.storyboard */; };
 		F3114A322BAB855E00FA0FEC /* GoBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3114A312BAB855E00FA0FEC /* GoBoardView.swift */; };
 		F3B09FFE2BAF6A2000D8E34A /* MagicCirclePart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B09FFD2BAF6A2000D8E34A /* MagicCirclePart.swift */; };
+		F3B0A0022BAF992200D8E34A /* StoneShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0A0012BAF992200D8E34A /* StoneShape.swift */; };
+		F3B0A0042BAF9A8D00D8E34A /* StoneShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0A0032BAF9A8D00D8E34A /* StoneShapeView.swift */; };
+		F3B0A0062BAFF56C00D8E34A /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0A0052BAFF56C00D8E34A /* ShapeView.swift */; };
+		F3B0A0082BAFF58D00D8E34A /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0A0072BAFF58D00D8E34A /* CircleView.swift */; };
+		F3B0A00A2BAFF5D100D8E34A /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0A0092BAFF5D100D8E34A /* SquareView.swift */; };
+		F3B0A00C2BAFF5F500D8E34A /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0A00B2BAFF5F500D8E34A /* TriangleView.swift */; };
+		F3B0A00F2BAFFCFE00D8E34A /* ResetButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0A00E2BAFFCFE00D8E34A /* ResetButtonView.swift */; };
+		F3B0A0112BB0092300D8E34A /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0A0102BB0092300D8E34A /* StarView.swift */; };
+		F3B0A0132BB00E2B00D8E34A /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B0A0122BB00E2B00D8E34A /* HeartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,15 @@
 		F3114A2B2BAB813500FA0FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3114A312BAB855E00FA0FEC /* GoBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoBoardView.swift; sourceTree = "<group>"; };
 		F3B09FFD2BAF6A2000D8E34A /* MagicCirclePart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCirclePart.swift; sourceTree = "<group>"; };
+		F3B0A0012BAF992200D8E34A /* StoneShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneShape.swift; sourceTree = "<group>"; };
+		F3B0A0032BAF9A8D00D8E34A /* StoneShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneShapeView.swift; sourceTree = "<group>"; };
+		F3B0A0052BAFF56C00D8E34A /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
+		F3B0A0072BAFF58D00D8E34A /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		F3B0A0092BAFF5D100D8E34A /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		F3B0A00B2BAFF5F500D8E34A /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		F3B0A00E2BAFFCFE00D8E34A /* ResetButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetButtonView.swift; sourceTree = "<group>"; };
+		F3B0A0102BB0092300D8E34A /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
+		F3B0A0122BB00E2B00D8E34A /* HeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +87,25 @@
 				F3114A2B2BAB813500FA0FEC /* Info.plist */,
 				F3114A312BAB855E00FA0FEC /* GoBoardView.swift */,
 				F3B09FFD2BAF6A2000D8E34A /* MagicCirclePart.swift */,
+				F3B0A0012BAF992200D8E34A /* StoneShape.swift */,
+				F3B0A0032BAF9A8D00D8E34A /* StoneShapeView.swift */,
+				F3B0A00E2BAFFCFE00D8E34A /* ResetButtonView.swift */,
+				F3B0A00D2BAFF61B00D8E34A /* ShapeView */,
 			);
 			path = "phw04-10-UIBezierPath";
+			sourceTree = "<group>";
+		};
+		F3B0A00D2BAFF61B00D8E34A /* ShapeView */ = {
+			isa = PBXGroup;
+			children = (
+				F3B0A0052BAFF56C00D8E34A /* ShapeView.swift */,
+				F3B0A0072BAFF58D00D8E34A /* CircleView.swift */,
+				F3B0A0092BAFF5D100D8E34A /* SquareView.swift */,
+				F3B0A00B2BAFF5F500D8E34A /* TriangleView.swift */,
+				F3B0A0102BB0092300D8E34A /* StarView.swift */,
+				F3B0A0122BB00E2B00D8E34A /* HeartView.swift */,
+			);
+			name = ShapeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,10 +179,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B0A00F2BAFFCFE00D8E34A /* ResetButtonView.swift in Sources */,
+				F3B0A0082BAFF58D00D8E34A /* CircleView.swift in Sources */,
+				F3B0A0112BB0092300D8E34A /* StarView.swift in Sources */,
+				F3B0A00A2BAFF5D100D8E34A /* SquareView.swift in Sources */,
 				F3114A222BAB813400FA0FEC /* ViewController.swift in Sources */,
 				F3114A322BAB855E00FA0FEC /* GoBoardView.swift in Sources */,
+				F3B0A0022BAF992200D8E34A /* StoneShape.swift in Sources */,
+				F3B0A0042BAF9A8D00D8E34A /* StoneShapeView.swift in Sources */,
 				F3B09FFE2BAF6A2000D8E34A /* MagicCirclePart.swift in Sources */,
+				F3B0A0132BB00E2B00D8E34A /* HeartView.swift in Sources */,
+				F3B0A00C2BAFF5F500D8E34A /* TriangleView.swift in Sources */,
 				F3114A1E2BAB813400FA0FEC /* AppDelegate.swift in Sources */,
+				F3B0A0062BAFF56C00D8E34A /* ShapeView.swift in Sources */,
 				F3114A202BAB813400FA0FEC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

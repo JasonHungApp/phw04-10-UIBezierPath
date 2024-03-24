@@ -7,8 +7,10 @@
 
 import Foundation
 
-enum Shape {
+enum StoneShape {
     case circle
     case square
     case triangle
+    case star
+    case heart
 }

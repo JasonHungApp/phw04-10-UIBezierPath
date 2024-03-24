@@ -8,91 +8,109 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var goBoardView: GoBoardView!
+    var selectStoneShapeView: StoneShapeView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // 添加隨機三角形到背景視圖
+        addRandomTrianglesToBackground()
         
+        addBlackBackgroundView()
         addTriangleLayer()
         addGoBoardView()
-        
-        
-       
-
+        setupSelectShapeView()
+        setupResetView()
+    }
+    
+    func addBlackBackgroundView() {
+        let blackBGView = UIView(frame: CGRect(x: 30, y: 70, width: 350, height: 650))
+        blackBGView.backgroundColor = .black.withAlphaComponent(0.2)
+        blackBGView.center.x = self.view.center.x
+        self.view.addSubview(blackBGView)
     }
     
     func addTriangleLayer(){
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: 0, y: 0))
-        path.addLine(to: CGPoint(x: 110, y: 0))
-        path.addLine(to: CGPoint(x: 90, y: 70))
+        path.move(to: CGPoint(x: -20, y: 0))
+        path.addLine(to: CGPoint(x: 130, y: 0))
+        path.addLine(to: CGPoint(x: 70, y: 70))
         path.close()
         
         let triangleLayer = CAShapeLayer()
-        triangleLayer.fillColor = UIColor.init(red: 0.7, green: 0.5, blue: 0.5, alpha: 0.5).cgColor
+        triangleLayer.fillColor = UIColor(red: 0.7, green: 0.5, blue: 0.5, alpha: 0.5).cgColor
         triangleLayer.path = path.cgPath
-        
-        
         
         view.layer.addSublayer(triangleLayer)
     }
     
     func addGoBoardView(){
         // 創建 GoBoardView
-        let boardView = GoBoardView(frame: CGRect(x: 50, y: 100, width: 300, height: 300))
-        boardView.backgroundColor = UIColor.white
-        
+        goBoardView = GoBoardView(frame: CGRect(x: 50, y: 100, width: 300, height: 300))
+        goBoardView.center = CGPoint(x: view.frame.width / 2, y: 250)
+        goBoardView.backgroundColor = UIColor.white
         // 將 GoBoardView 添加到視圖中
-        view.addSubview(boardView)
+        view.addSubview(goBoardView)
     }
     
-    //test layer
-    func addGoBoardLayer(){
-        // 設定棋盤的寬度和高度
-        let boardWidth = 300.0
-        let boardHeight = 300.0
-        
-        // 設定格子的行數和列數
-        let numRows = 12
-        let numCols = 12
-        
-        // 計算每個格子的寬度和高度
-        let cellWidth = boardWidth / CGFloat(numCols)
-        let cellHeight = boardHeight / CGFloat(numRows)
-        
-        // 開始繪製
-        let path = UIBezierPath()
-        
-
-        // 繪製水平線（包括最上方和最下方的線）
-        for i in 0...numRows {
-            let y = CGFloat(i) * cellHeight
-            path.move(to: CGPoint(x: 50, y: y+100))
-            path.addLine(to: CGPoint(x: boardWidth+50, y: y+100))
+    private func setupResetView() {
+        // 創建 setupResetView
+        let resetButtonView = ResetButtonView(frame: CGRect(x: 0, y: 450, width: 40, height: 40))
+        resetButtonView.center = CGPoint(x: view.frame.width / 2, y: 460)
+        resetButtonView.didResetBoard = { [weak self] in
+            self?.goBoardView.resetBoard() // 調用 GoBoardView 的 resetBoard 方法
         }
-
-        // 繪製垂直線（包括最左邊和最右邊的線）
-        for i in 0...numCols {
-            let x = CGFloat(i) * cellWidth
-            path.move(to: CGPoint(x: x+50, y: 0+100))
-            path.addLine(to: CGPoint(x: x+50, y: boardHeight+100))
-        }
-        
-        // 設定線的顏色和寬度
-        UIColor.lightGray.setStroke()
-        path.lineWidth = 1.0
-        
-        // 創建線的圖層
-        let lineLayer = CAShapeLayer()
-        lineLayer.path = path.cgPath
-        lineLayer.strokeColor = UIColor.lightGray.cgColor
-        lineLayer.lineWidth = 1.0
-        
-        // 將線的圖層添加到視圖的圖層中
-        view.layer.addSublayer(lineLayer)
+        view.addSubview(resetButtonView)
     }
+    
+    private func setupSelectShapeView() {
+        // 創建 SelectStoneShapeView
+        let selectStoneShapeView = StoneShapeView(frame: CGRect(x: 100, y: 600, width: view.frame.width-100, height: 160))
+        selectStoneShapeView.center = CGPoint(x: view.frame.width / 2, y: 600)
+        selectStoneShapeView.didSelectShape = { [weak self] shape in
+            self?.goBoardView.changeStoneShape(to: shape) // 調用 GoBoardView 的 changeStoneShape 方法
+        }
+        view.addSubview(selectStoneShapeView)
+    }
+    
+    func addRandomTrianglesToBackground() {
+        // 獲取 ViewController 的背景視圖大小
+        let backgroundSize = view.bounds.size
+        // 設置要生成的三角形數量
+        let triangleCount = 50
+        // 生成隨機大小及形狀的三角形並添加到背景視圖中
+        for _ in 0..<triangleCount {
+            // 隨機生成三角形的位置
+            let randomX = CGFloat.random(in: 0..<backgroundSize.width)
+            let randomY = CGFloat.random(in: 0..<backgroundSize.height)
+            let randomPoint = CGPoint(x: randomX, y: randomY)
+            // 隨機生成三角形的大小
+            let randomSize = CGFloat.random(in: 20...100)
+            // 創建三角形視圖
+            let triangleView = TriangleView(frame: CGRect(x: randomPoint.x, y: randomPoint.y, width: randomSize, height: randomSize))
+            // 設置三角形視圖的填充顏色為隨機顏色
+            triangleView.fillColor = UIColor.random()
+            triangleView.transform = CGAffineTransform(rotationAngle: randomRotationAngle()) // 隨機旋轉角度
+            triangleView.backgroundColor = .clear
+            // 添加三角形視圖到背景視圖
+            view.addSubview(triangleView)
+        }
+    }
+    
+    private func randomRotationAngle() -> CGFloat {
+        return CGFloat.random(in: 0...(2 * CGFloat.pi)) // 隨機生成旋轉角度
+    }
+}
 
-
+extension UIColor {
+    static func random() -> UIColor {
+        // 生成隨機的RGB顏色
+        let red = CGFloat.random(in: 0...1)
+        let green = CGFloat.random(in: 0...1)
+        let blue = CGFloat.random(in: 0...1)
+        return UIColor(red: red, green: green, blue: blue, alpha: 0.5)
+    }
 }
 
 
